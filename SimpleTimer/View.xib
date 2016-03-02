@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="SimpleTimer" customModuleProvider="target">
+            <connections>
+                <outlet property="lap" destination="Dfx-3Z-YOc" id="SoJ-xK-9q8"/>
+                <outlet property="reset" destination="x6Y-ss-W5v" id="GB1-ng-czh"/>
+                <outlet property="start" destination="BQP-rV-GAz" id="I9D-sH-MaD"/>
+                <outlet property="stop" destination="plb-2G-n5p" id="aib-Ui-dSD"/>
+                <outlet property="tableView" destination="Lro-PW-f7M" id="sHY-jy-U1N"/>
+                <outlet property="timeLabel" destination="tSb-Xf-afc" id="Tvg-aU-XQk"/>
+                <outlet property="view" destination="iN0-l3-epB" id="EBp-A3-vib"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQP-rV-GAz">
+                    <rect key="frame" x="10" y="224" width="120" height="120"/>
+                    <color key="backgroundColor" red="1" green="1" blue="0.95453906779999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
+                    <state key="normal" title="Start">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="startButton:" destination="-1" eventType="touchUpInside" id="a6r-1R-8Fo"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="plb-2G-n5p">
+                    <rect key="frame" x="190" y="224" width="120" height="120"/>
+                    <color key="backgroundColor" red="1" green="1" blue="0.95453906779999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="120" id="Qym-ro-eQi"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
+                    <state key="normal" title="Stop">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="stopButton:" destination="-1" eventType="touchUpInside" id="NpM-3g-Te0"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tSb-Xf-afc">
+                    <rect key="frame" x="10" y="32" width="300" height="100"/>
+                    <color key="backgroundColor" red="1" green="1" blue="0.95453906779999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="82"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x6Y-ss-W5v">
+                    <rect key="frame" x="135" y="153" width="50" height="50"/>
+                    <color key="backgroundColor" red="1" green="1" blue="0.95453906779999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="IKB-fP-1xX"/>
+                        <constraint firstAttribute="width" constant="50" id="LwU-xm-VAX"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
+                    <state key="normal" title="Reset">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="resetButton:" destination="-1" eventType="touchUpInside" id="WYF-Ei-eKk"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lro-PW-f7M">
+                    <rect key="frame" x="8" y="418" width="302" height="142"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dfx-3Z-YOc">
+                    <rect key="frame" x="135" y="360" width="50" height="50"/>
+                    <color key="backgroundColor" red="1" green="1" blue="0.95453906779999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Sxr-qt-i3f"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
+                    <state key="normal" title="Lap">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="lapButton:" destination="-1" eventType="touchUpInside" id="Ppb-mU-1eV"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="BQP-rV-GAz" firstAttribute="leading" secondItem="tSb-Xf-afc" secondAttribute="leading" id="1Tc-Wa-JhL"/>
+                <constraint firstItem="Dfx-3Z-YOc" firstAttribute="leading" secondItem="x6Y-ss-W5v" secondAttribute="leading" id="3Oc-qh-bip"/>
+                <constraint firstItem="Dfx-3Z-YOc" firstAttribute="trailing" secondItem="x6Y-ss-W5v" secondAttribute="trailing" id="6Vu-xt-cwf"/>
+                <constraint firstAttribute="trailing" secondItem="tSb-Xf-afc" secondAttribute="trailing" constant="10" id="Dg8-ew-eAr"/>
+                <constraint firstAttribute="trailing" secondItem="plb-2G-n5p" secondAttribute="trailing" constant="10" id="Fhq-Ha-GRN"/>
+                <constraint firstItem="Lro-PW-f7M" firstAttribute="top" secondItem="Dfx-3Z-YOc" secondAttribute="bottom" constant="8" symbolic="YES" id="Ifb-gZ-mPW"/>
+                <constraint firstItem="plb-2G-n5p" firstAttribute="leading" secondItem="BQP-rV-GAz" secondAttribute="trailing" constant="60" id="OAM-At-s5f"/>
+                <constraint firstAttribute="bottom" secondItem="Lro-PW-f7M" secondAttribute="bottom" constant="8" id="REJ-5J-P45"/>
+                <constraint firstItem="BQP-rV-GAz" firstAttribute="baseline" secondItem="plb-2G-n5p" secondAttribute="firstBaseline" id="Y65-eY-QlX"/>
+                <constraint firstItem="x6Y-ss-W5v" firstAttribute="centerX" secondItem="tSb-Xf-afc" secondAttribute="centerX" id="YXD-nH-zqE"/>
+                <constraint firstItem="x6Y-ss-W5v" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="153" id="aQB-bB-K4j"/>
+                <constraint firstAttribute="trailing" secondItem="Lro-PW-f7M" secondAttribute="trailing" constant="8" id="eug-Xd-IcS"/>
+                <constraint firstItem="tSb-Xf-afc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="32" id="hIh-1V-SzL"/>
+                <constraint firstItem="Lro-PW-f7M" firstAttribute="top" secondItem="plb-2G-n5p" secondAttribute="bottom" constant="74" id="iKO-og-QtN"/>
+                <constraint firstItem="BQP-rV-GAz" firstAttribute="firstBaseline" secondItem="plb-2G-n5p" secondAttribute="baseline" id="nOv-EP-cHT"/>
+                <constraint firstItem="plb-2G-n5p" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="pVT-yT-FhG"/>
+                <constraint firstItem="Lro-PW-f7M" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="rpY-QY-ua9"/>
+                <constraint firstItem="x6Y-ss-W5v" firstAttribute="top" secondItem="tSb-Xf-afc" secondAttribute="bottom" constant="21" id="s9C-d2-gkK"/>
+                <constraint firstItem="plb-2G-n5p" firstAttribute="top" secondItem="tSb-Xf-afc" secondAttribute="bottom" constant="92" id="sCG-87-o3f"/>
+                <constraint firstItem="tSb-Xf-afc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="sY5-JC-TKa"/>
+                <constraint firstItem="BQP-rV-GAz" firstAttribute="top" secondItem="plb-2G-n5p" secondAttribute="top" id="yo8-Sb-y4q"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="144" y="463"/>
+        </view>
+    </objects>
+</document>
